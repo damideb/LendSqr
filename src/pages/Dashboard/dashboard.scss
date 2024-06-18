@@ -1,0 +1,64 @@
+@import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/MediaQueries.scss';
+
+.dashboard {
+    background: $bg;
+    display: flex;
+    width: 100%;
+
+    main {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 32px;
+        padding: 6em 4em;
+        width: 82%;
+        .userOptions {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            // align-items: center;
+            gap: 1em;
+
+            @include screen-size(desktop-only){
+                flex-flow: column nowrap;
+            }
+        }
+        @include screen-size(desktop-only){
+            width: 75%;
+        }
+        @include screen-size(tablet-only){
+            width: 100%;
+            padding: 40px;
+        }
+        @include screen-size(phone-only){
+            padding: 20px;
+        }
+    }
+    &-table {
+        
+        @include screen-size(desktop-only){
+            overflow-x: auto;
+        }
+        @include screen-size(desktop-plus){
+            overflow-x: auto;
+        }
+    }
+    &-sidebar {
+        width: 18%;
+        @include screen-size(desktop-only){
+            width: 35%;
+        }
+        @include screen-size(tablet-only){
+            display: none;
+        }
+    }
+    &-sidebar-mobile {
+        display: none;
+        @include screen-size(tablet-only){
+            display: block;
+        }
+    }
+    @include screen-size(tablet-only){
+        flex-flow: column nowrap;
+    }
+}

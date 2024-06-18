@@ -1,0 +1,46 @@
+@import '../../components//defaultStyles/Colors.scss';
+@import '../../components//defaultStyles/Typography.scss';
+
+.pagination-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  select {
+    background: rgba(33, 63, 125, 0.1);
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+    width: 70px;
+    padding: 0 10px;
+    color: $primary;
+    font-weight: $medium;
+    font-size: 14px;
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    li {
+      list-style: none !important;
+      margin-right: 15px;
+      cursor: pointer;
+      color: #545f7d;
+      opacity: 0.6;
+    }
+    li:last-child,
+    li:first-child {
+      background: rgba(33, 63, 125, 0.1);
+      border-radius: 4px;
+      padding: 5px 10px;
+      color: #213f7d;
+      font-weight: 500;
+      opacity: 1;
+    }
+    .active-page {
+      font-weight: 500;
+      opacity: 1;
+    }
+  }
+}
