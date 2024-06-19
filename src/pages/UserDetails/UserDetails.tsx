@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./userDetails.scss";
 import Nav from "../../components/Nav/Nav";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import left from "../../assets/icon/back.svg";
 import Details from "./Details/Details";
-import { ActiveUserDetails, axiosBase } from "../../components/UserTable/Api";
+import { axiosBase } from "../../components/UserTable/Api";
 import { Link, useParams } from "react-router-dom";
 import MobileSidebar from "../../components/Sidebar/MobileSidebar";
+import { ActiveUserDetails } from "../../types";
 
 const UserDetails = () => {
   const [menuActive, setMenuActive] = useState(0);
@@ -28,7 +29,7 @@ const UserDetails = () => {
     try {
       const response = await axiosBase.get(`/data`);
       const data = response.data
-      const singleItem = data.find(item=> item.id===id) ||[]
+      const singleItem = data.find((item: ActiveUserDetails)=> item.id===id) ||[]
       localStorage.setItem('usersId', JSON.stringify(singleItem));
     } 
     catch (error) {

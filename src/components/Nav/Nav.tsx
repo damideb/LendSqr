@@ -1,4 +1,3 @@
-import React from 'react'
 import logo from '../../assets/icon/logo.svg'
 import search from '../../assets/icon/search-icon.png'
 import alarm from '../../assets/icon/alarm.svg'

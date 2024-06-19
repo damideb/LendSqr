@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useState } from "react";
 import filter from "../../assets/icon/filter-results-button.svg";
 import "./userTable.scss";
@@ -13,11 +13,11 @@ const FIlterTable = ({ current }: PropsType) => {
   const organization = ["Select", "lendsqr", "nokia", "jku", "gtyh"];
   const status = ["Select", "Active", "Inactive", "Pending", "Blacklist"];
 
-  const boxRef = useRef<any>(null);
+  const boxRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleClick = (event: any) => {
-      if (!boxRef.current.contains(event.target)) {
+    const handleClick = (event) => {
+      if (!boxRef.current?.contains(event.target)) {
         setFilterer(!filterer);
         // close the box
         console.log(current, filterer)
@@ -36,7 +36,7 @@ const FIlterTable = ({ current }: PropsType) => {
         className="th-img"
         src={filter}
         alt="filter"
-        onClick={(e) => setFilterer(current)}
+        onClick={() => setFilterer(current)}
       />
       {filterer === current && (
         <div className="filter">

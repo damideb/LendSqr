@@ -1,5 +1,4 @@
-import React from 'react'
-import { ActiveUserDetails } from '../../../components/UserTable/Api'
+import { ActiveUserDetails } from '../../../types';
 import './details.scss'
 
 type Props = {

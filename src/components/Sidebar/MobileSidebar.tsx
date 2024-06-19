@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import{ useState } from 'react'
 import './sidebar.scss'
 import logo from '../../assets/icon/logo.svg'
 import briefcase from '../../assets/icon/briefcase.png'

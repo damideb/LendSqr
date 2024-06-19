@@ -1,4 +1,3 @@
-import React from 'react'
 import './sidebar.scss'
 import briefcase from '../../assets/icon/briefcase.png'
 import down from '../../assets/icon/downarr.png'
