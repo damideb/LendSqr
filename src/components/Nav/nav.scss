@@ -14,7 +14,7 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        gap: 170px;
+        gap: 10em;
         &-img {
             width: 144.8px;
             img {
@@ -49,6 +49,13 @@
                 border: 1px solid $secondary;
                 cursor: pointer;
             }
+
+            @include screen-size(desktop-only){
+                width: 250px;
+            }
+        }
+        @include screen-size(desktop-only){
+            gap: 5em;
         }
         @include screen-size(tablet-only) {
             gap: 10px;
@@ -57,7 +64,7 @@
                 width: 200px;
             }
             &-input {
-                width: 100%;
+                width: 80%;
             }
         }
     }
@@ -87,10 +94,11 @@
     }
     @include screen-size(tablet-only) {
         justify-content: center;
+        flex-direction: column-reverse;
         gap: 16px;
         padding: 24px;
     }
     @include screen-size(desktop-only) {
-        justify-content: center;
+        // justify-content: center;
     }
 }

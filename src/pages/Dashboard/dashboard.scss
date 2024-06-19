@@ -6,6 +6,7 @@
     display: flex;
     width: 100%;
 
+    
     main {
         display: flex;
         flex-flow: column nowrap;
@@ -46,7 +47,7 @@
     &-sidebar {
         width: 18%;
         @include screen-size(desktop-only){
-            width: 35%;
+            width: 25%;
         }
         @include screen-size(tablet-only){
             display: none;

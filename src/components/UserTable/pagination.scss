@@ -1,5 +1,6 @@
 @import '../../components//defaultStyles/Colors.scss';
 @import '../../components//defaultStyles/Typography.scss';
+@import '../../components/defaultStyles/MediaQueries.scss';
 
 .pagination-wrapper {
   margin-top: 30px;
@@ -13,7 +14,7 @@
     border: none;
     border-radius: 10px;
     height: 35px;
-    width: 70px;
+    width: 60px;
     padding: 0 10px;
     color: $primary;
     font-weight: $medium;
@@ -42,5 +43,13 @@
       font-weight: 500;
       opacity: 1;
     }
+    
   }
+
+  @include screen-size(phone-only){
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+
 }
