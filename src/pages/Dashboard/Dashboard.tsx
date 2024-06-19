@@ -56,7 +56,7 @@ const Dashboard = () => {
           </div>
 
           <section className='dashboard-table'>
-            <UserTable  />
+          <UserTable  />
           </section>
         </main>
       </div>

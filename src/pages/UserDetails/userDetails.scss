@@ -10,15 +10,19 @@
         flex-flow: column nowrap;
         gap: 32px;
         padding: 80px;
-        width: 80%;
+        width: 75%;
         @include screen-size(tablet-only){
+            justify-content: center;
+            width: 100%;
             padding: 40px;
+          
         }
         @include screen-size(phone-only){
             padding: 20px;
         }
         @include screen-size(desktop-only){
-            width: 75%;
+            
+           
         }
     }
     a{

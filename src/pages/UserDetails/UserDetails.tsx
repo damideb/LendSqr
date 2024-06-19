@@ -27,11 +27,15 @@ const UserDetails = () => {
 
   async function getUser() {
     try {
-      const response = await axiosBase.get(`/data`);
-      const data = response.data
-      const singleItem = data.find((item: ActiveUserDetails)=> item.id===id) ||[]
-      localStorage.setItem('usersId', JSON.stringify(singleItem));
-    } 
+        const response = await axiosBase.get(`/data`);
+        const data = response.data
+        const singleItem = data.find((item: ActiveUserDetails)=> item.id===id) ||[]
+        localStorage.setItem('usersId', JSON.stringify(singleItem));
+        const items = JSON.parse(localStorage.getItem('usersId')!);
+        if (items) {
+        setUsersDetails(items);
+        }
+      } 
     catch (error) {
       console.error(error);
     }
@@ -39,13 +43,6 @@ const UserDetails = () => {
 
   useEffect(() => {
     getUser();
-  }, [id]);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('usersId')!);
-    if (items) {
-     setUsersDetails(items);
-    }
   }, [id]);
 
   return (

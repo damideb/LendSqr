@@ -21,8 +21,13 @@ const UserTable = () => {
     try {
       const response = await axiosBase.get("/data");
       localStorage.setItem("users", JSON.stringify(response.data));
+      const items = JSON.parse(localStorage.getItem("users")!);
+      if (items) {
+        setUsersStored(items);
+      }
       setIsLoading(false);
-    } catch (error) {
+    } 
+    catch (error) {
       setIsLoading(false);
       console.error(error);
     }
@@ -33,12 +38,7 @@ const UserTable = () => {
     getUser();
   }, []);
 
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("users")!);
-    if (items) {
-      setUsersStored(items);
-    }
-  }, []);
+
 
   const headingData = [
     "ORGANIZATION",
@@ -130,7 +130,7 @@ const UserTable = () => {
       </table>
       </div>
     
-      {usersStored.length && (
+      {usersStored.length>0 && (
         <Pagination
           setDisplayUsers={setDisplayUsers}
           usersStored={usersStored}
