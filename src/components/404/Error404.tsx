@@ -1,4 +1,3 @@
-import React from 'react'
 import './error404.scss'
 import errImg from '../../assets/images/404.jpg'
 

@@ -16,11 +16,10 @@ const FIlterTable = ({ current }: PropsType) => {
   const boxRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleClick = (event) => {
-      if (!boxRef.current?.contains(event.target)) {
+    const handleClick = (ev: MouseEvent) => {
+      if (!boxRef.current?.contains(ev.target as Node)) {
         setFilterer(!filterer);
         // close the box
-        console.log(current, filterer)
       }
     };
     document.addEventListener("click", handleClick);
