@@ -6,7 +6,6 @@
     display: flex;
     width: 100%;
 
-    
     main {
         display: flex;
         flex-flow: column nowrap;
@@ -15,13 +14,13 @@
         width: 82%;
         .userOptions {
             display: flex;
-            flex-flow: row wrap;
+            flex-flow: row ;
             justify-content: space-between;
-            // align-items: center;
             gap: 1em;
 
             @include screen-size(desktop-only){
                 flex-flow: column nowrap;
+                
             }
         }
         @include screen-size(desktop-only){

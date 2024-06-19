@@ -70,6 +70,9 @@
                     opacity: 0.6;
                     line-height: 19px;
                 }
+                &:focus{
+                    border-color: $secondary;
+                }
             }
             .password-input {
                 position: relative;
@@ -97,6 +100,9 @@
                 text-transform: uppercase;
                 font-weight: 500;
                 cursor: pointer;
+                &:disabled{
+                    cursor: not-allowed;
+                }
             }
         }
     }

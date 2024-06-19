@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./userTable.scss";
 import { axiosBase } from "./Api";
 import { useEffect } from "react";
@@ -7,21 +7,14 @@ import FIlterTable from "./FIlterTable";
 import Pagination from "./Pagination";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import { User } from "../../types";
 
 const UserTable = () => {
   const [usersStored, setUsersStored] = useState<User[]>([]);
-  const [displayUsers, setDisplayUsers] = useState([]);
-  const [activeDropDown, setActiveDropDown] = useState<any>("");
+  const [displayUsers, setDisplayUsers] = useState<User[]>([]);
+  const [activeDropDown, setActiveDropDown] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  type User = {
-    organization: string;
-    createdAt: string;
-    userName: string;
-    email: string;
-    phoneNumber: string;
-    id?: string;
-  };
 
   async function getUser() {
     setIsLoading(true);
@@ -92,16 +85,14 @@ const UserTable = () => {
           />
         ) : (
           <tbody className="userTable-body">
-            {displayUsers.map((item: User, index: number) => (
+            {displayUsers?.map((item: User, index: number) => (
               <tr key={index}>
                 <td>{item.organization} </td>
                 <td>{item.userName}</td>
                 <td>{item.email}</td>
                 <td>{item.phoneNumber}</td>
                 <td>{customDate(item.createdAt)}</td>
-                {/* <td>
-              <p className="activeOpt">Active</p>
-            </td> */}
+
                 <td>
                   <p
                     className={`${
@@ -131,7 +122,7 @@ const UserTable = () => {
                     setActiveDropDown={setActiveDropDown}
                     activeDropDown={activeDropDown}
                   />
-                </td>
+              </td>
               </tr>
             ))}
           </tbody>

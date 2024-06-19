@@ -1,0 +1,84 @@
+@import '../../../components/defaultStyles/Colors.scss';
+@import '../../../components/defaultStyles/MediaQueries.scss';
+@import '../../../components/defaultStyles/Typography.scss';
+
+.fullDetails {
+    background-color: $white;
+    padding: 24px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    word-wrap: break-word;
+}
+.personalDetails {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 10px;
+
+
+    @include screen-size(desktop-only){
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include screen-size(tablet-only){
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include screen-size(phone-only){
+        display: grid;
+         grid-template-columns: repeat(2, minmax(0, 1fr));
+     }
+    div {
+        h4{
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        p{
+            font-weight: $medium;
+        }
+    }
+    &-single{
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: column nowrap;
+        gap: 32px;
+        
+    }
+}
+
+.up {
+    gap: 2em;
+    flex-wrap: wrap;;
+    @include screen-size(tablet-only){
+        justify-content: left;
+        gap: 3em;
+    }
+
+    @include screen-size(desktop-only){
+        justify-content: left;
+        gap: 3em;
+    }
+}
+.down {
+
+    div {
+        width: 26%;
+        @include screen-size(phone-only){
+            width: 100%;
+        }
+        @include screen-size(tablet-only){
+            width: 100%;
+        }
+    }
+}
+
+hr{
+    border-top: 1px solid $primary;
+    opacity: 0.1;
+}

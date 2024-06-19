@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import userMenu from '../../assets/icon/more.svg'
 import eye from '../../assets/icon/Group.svg'
 import black from '../../assets/icon/delete.svg'
@@ -7,8 +6,8 @@ import { Link } from 'react-router-dom'
 
 
 type PropsType = {
-  id?: string;
-  setActiveDropDown: (id:string| undefined)=>void;
+  id: string;
+  setActiveDropDown:React.Dispatch<React.SetStateAction<string>>;
   activeDropDown: string;
 }
 

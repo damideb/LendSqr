@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/icon/logo.svg'
 import loginImg from '../../assets/images/pablo-sign-in.svg'
-import { useState, useRef} from "react"
+import { useState, useRef, useEffect} from "react"
 import './login.scss'
 
 const Login = () => {
@@ -13,6 +13,7 @@ const Login = () => {
     })
 
     const ButtonRef = useRef<HTMLButtonElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)
 
     const showPassword = ()=>{
         setShow(prev=>!prev)
@@ -28,12 +29,19 @@ const Login = () => {
 
     }
 
-    // if(ButtonRef.current && (inputValue.username==="" && inputValue.password ==="")){
-    //     ButtonRef.current.disabled= true
-    // }
-    // if(ButtonRef.current && (inputValue.username!=="" && inputValue.password !=="")){
-    //     ButtonRef.current.disabled= false
-    // }
+    if(ButtonRef.current && (inputValue.username==="" && inputValue.password ==="")){
+        ButtonRef.current.disabled= true
+    }
+    if(ButtonRef.current && (inputValue.username!=="" && inputValue.password !=="")){
+        ButtonRef.current.disabled= false
+    }
+
+    useEffect(()=>{
+        if(inputRef.current){
+            inputRef.current.focus()
+        }
+        
+    },[])
    
    
     return (
@@ -58,7 +66,9 @@ const Login = () => {
                             required
                             value={inputValue.username}
                             onChange={handleChange}
-                            name='username'/>
+                            name='username'
+                            ref={inputRef}
+                            />
                     </div>
                     <div className='password-input'>
                         <input 
