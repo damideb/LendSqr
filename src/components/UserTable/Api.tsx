@@ -6,7 +6,7 @@ export const axiosBase = axios.create({
     headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
-        Authorization: 'Bearer odbhs5imvzgkg9dvi8rw7bqfl25pa3oqws9sd8ih'
+        Authorization: import.meta.env.VITE_APP_BASE_API_KEY
     }
 });
 
